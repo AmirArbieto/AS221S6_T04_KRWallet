@@ -1,1 +1,1 @@
-# AS221S6_T04_KRWallet
+# AS221S6_T04_KR_Wallet
