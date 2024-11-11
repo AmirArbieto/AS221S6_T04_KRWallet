@@ -1,8 +1,22 @@
 version: '3.8'
 
 services:
-  front: 
+  front:
     image: amirarbieto333/as221s6_t04_kr_wallet:latest
     container_name: front-container
     ports:
       - "80:80"
+    environment:
+      - NODE_ENV=production  # Ajusta según el entorno (production, development)
+    restart: unless-stopped  # Reinicia el contenedor automáticamente si falla
+    logging:
+      driver: "json-file"  # Guarda logs en un archivo JSON
+      options:
+        max-size: "10m"  # Tamaño máximo de cada archivo de log
+        max-file: "3"    # Número máximo de archivos de log a mantener
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge  # Crea una red bridge para comunicación entre servicios
