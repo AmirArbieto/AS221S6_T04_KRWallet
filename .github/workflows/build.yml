@@ -13,7 +13,7 @@ jobs:
       # Paso 1: Clonar el repositorio
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for better relevancy of analysis
+          fetch-depth: 0  # Shallow clones should be disabled for better relevancy of analysiss
 
       # Paso 2: Análisis de SonarCloud
       - name: SonarCloud Scan
